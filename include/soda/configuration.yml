@@ -10,5 +10,5 @@ data_source sales:
     dataset: sales
 soda_cloud:
   host: cloud.us.soda.io
-  api_key_id: cb648ff5-fdc4-423b-aaa6-2624e7ef5593
-  api_key_secret: wjnPsCLkH2YJB5O4iw-V6i4QtHqctG9JF7vkApVCxM9VSjp9TGXMew
+  api_key_id: your_apy_key
+  api_key_secret: your_secret_key
