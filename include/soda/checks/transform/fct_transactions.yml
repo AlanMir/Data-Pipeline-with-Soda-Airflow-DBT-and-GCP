@@ -1,0 +1,23 @@
+checks for fct_transactions:
+  # Check fails when invoice_id, quantity, total is missing or
+  # when the data type of those columns is other than specified
+  - schema:
+      fail:
+        when required column missing: 
+          [transaction_id, transaction_date, product_id, units_sold, total_revenue]
+        when wrong column type:
+          transaction_id: int
+          transaction_date: string
+          product_id: string
+          units_sold: int
+          total_revenue: float64
+  # Check fails when NULL values in the column
+  - missing_count(transaction_id) = 0:
+      name: All transactions have a key
+  # Check fails when the total of any invoices is negative
+  - failed rows:
+      name: All transactions have a positive total amount
+      fail query: |
+        SELECT transaction_id, total_revenue
+        FROM fct_transactions
+        WHERE total_revenue < 0

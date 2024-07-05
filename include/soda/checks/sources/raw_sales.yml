@@ -1,0 +1,14 @@
+checks for raw_sales:
+  - schema:
+      fail:
+        when required column missing: [TransactionID, Date, ProductCategory, ProductName, UnitsSold, UnitPrice, TotalRevenue, Region, PaymentMethod]
+        when wrong column type:
+          TransactionID: integer
+          Date: string
+          ProductCategory: string
+          ProductName: string
+          UnitsSold: integer
+          UnitPrice: float64
+          TotalRevenue: float64
+          Region: string
+          PaymentMethod: string

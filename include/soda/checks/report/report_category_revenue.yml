@@ -1,0 +1,4 @@
+checks for report_product_revenue:
+  # Check fails if the revenue is negative
+  - missing_count(product_category) = 0:
+      name: All products have a category

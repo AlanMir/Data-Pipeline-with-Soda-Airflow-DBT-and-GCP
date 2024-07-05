@@ -1,0 +1,14 @@
+checks for dim_date:
+  # Check fails when product_key or english_product_name is missing, OR
+  # when the data type of those columns is other than specified
+  - schema:
+      fail:
+        when required column missing: [date_id]
+        when wrong column type:
+          date_id: string
+  # Check fails when customer_id is not unique
+  - duplicate_count(date_id) = 0:
+      name: All dates are unique
+  # Check fails when any NULL values exist in the column
+  - missing_count(date_id) = 0:
+      name: All dates have a key

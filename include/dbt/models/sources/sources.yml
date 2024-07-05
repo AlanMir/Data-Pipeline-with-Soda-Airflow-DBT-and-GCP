@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: sales
+    database: brave-aviary-428415-v5
+
+    tables:
+      - name: raw_sales

@@ -1,0 +1,11 @@
+name: 'sales'
+
+version: '1.0'
+
+config-version: 2
+
+profile: 'sales'
+
+models:
+  sales:
+    materialized: table
